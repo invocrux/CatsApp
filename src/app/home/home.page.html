@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
@@ -16,5 +16,23 @@
   <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  </div> -->
+
+  <ion-card *ngFor="let item of data">
+      <ion-card-header>
+        <ion-card-title>{{item.name}}</ion-card-title>
+        
+        
+      </ion-card-header>
+      <ion-card-content>
+   
+          <img src="../../assets/cat.png.jpg" />
+    
+        <div class="space-beetwen" >
+          <ion-card-subtitle>PAIS DE ORIGEN: {{item.origin}} </ion-card-subtitle>
+          <ion-card-subtitle>INTELIGENCIA {{item.intelligence}}</ion-card-subtitle>
+        </div>
+      </ion-card-content>
+      
+  </ion-card>
 </ion-content>
