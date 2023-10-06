@@ -1,24 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      CatsBreeds
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div> -->
-
-  <ion-card *ngFor="let item of data">
+  <ion-card *ngFor="let item of cats">
       <ion-card-header>
         <ion-card-title>{{item.name}}</ion-card-title>
         
@@ -26,11 +16,14 @@
       </ion-card-header>
       <ion-card-content>
    
-          <img src="../../assets/cat.png.jpg" />
+          <img [src]="getImages(item.reference_image_id)" />
     
         <div class="space-beetwen" >
-          <ion-card-subtitle>PAIS DE ORIGEN: {{item.origin}} </ion-card-subtitle>
-          <ion-card-subtitle>INTELIGENCIA {{item.intelligence}}</ion-card-subtitle>
+          <strong class="txt-aling-v"><ion-icon name="earth" color="tertiary" size="large" ></ion-icon>{{item.origin | uppercase}}</strong>
+          <ion-chip color="tertiary" mode="ios" >
+            <ion-icon name="extension-puzzle"></ion-icon> <strong>: {{item.intelligence}}</strong>
+          </ion-chip>
+          
         </div>
       </ion-card-content>
       
